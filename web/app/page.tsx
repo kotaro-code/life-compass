@@ -1,17 +1,44 @@
+import Header from "@/components/Header";
+import DashboardCard from "@/components/DashboardCard";
+import PrimaryButton from "@/components/PrimaryButton";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gray-50">
-      <h1 className="text-5xl font-bold text-blue-600">
-        Life Compass
-      </h1>
+    <>
+      <Header />
 
-      <p className="mt-6 text-lg text-gray-600">
-        人生設計を、もっと身近に。
-      </p>
+      <main className="mx-auto max-w-5xl p-8">
 
-      <button className="mt-10 rounded-xl bg-blue-600 px-8 py-4 text-lg font-semibold text-white transition hover:bg-blue-700">
-        シミュレーションを始める
-      </button>
-    </main>
+        <h2 className="mb-8 text-3xl font-bold">
+          🏠 ダッシュボード
+        </h2>
+
+        <div className="grid gap-6 md:grid-cols-2">
+
+          <DashboardCard
+            title="現在の資産"
+            value="¥12,350,000"
+          />
+
+          <DashboardCard
+            title="今月の収支"
+            value="+¥82,000"
+          />
+
+          <DashboardCard
+            title="次のライフイベント"
+            value="🏠 マイホーム購入"
+          />
+
+        </div>
+
+        <div className="mt-10">
+          <PrimaryButton
+            text="シミュレーションを始める"
+          />
+        </div>
+
+      </main>
+    </>
   );
 }
