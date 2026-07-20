@@ -10,9 +10,9 @@ export default function Header() {
           Life Compass
         </h1>
 
-        <div>
+        <button className="rounded-lg bg-gray-100 px-3 py-2 hover:bg-gray-200">
           👤 Kotaro
-        </div>
+        </button>
 
       </div>
 

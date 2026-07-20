@@ -1,12 +1,9 @@
-import Header from "@/components/Header";
 import DashboardCard from "@/components/DashboardCard";
 import PrimaryButton from "@/components/PrimaryButton";
 
 export default function Home() {
   return (
     <>
-      <Header />
-
       <main className="mx-auto max-w-5xl p-8">
 
         <h2 className="mb-8 text-3xl font-bold">
