@@ -1,5 +1,5 @@
-import DashboardCard from "@/components/DashboardCard";
-import PrimaryButton from "@/components/PrimaryButton";
+import DashboardCard from "@/components/dashboard/DashboardCard";
+import PrimaryButton from "@/components/ui/PrimaryButton";
 
 export default function Home() {
   return (
