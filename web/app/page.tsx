@@ -1,41 +1,17 @@
-import DashboardCard from "@/components/dashboard/DashboardCard";
-import PrimaryButton from "@/components/ui/PrimaryButton";
+import { supabase } from "@/lib/supabase";
 
-export default function Home() {
+export default async function Home() {
+  const { error } = await supabase.from("profiles").select("*");
+
   return (
-    <>
-      <main className="mx-auto max-w-5xl p-8">
+    <main className="p-10">
+      <h1 className="text-4xl font-bold">
+        Life Compass
+      </h1>
 
-        <h2 className="mb-8 text-3xl font-bold">
-          🏠 ダッシュボード
-        </h2>
-
-        <div className="grid gap-6 md:grid-cols-2">
-
-          <DashboardCard
-            title="現在の資産"
-            value="¥12,350,000"
-          />
-
-          <DashboardCard
-            title="今月の収支"
-            value="+¥82,000"
-          />
-
-          <DashboardCard
-            title="次のライフイベント"
-            value="🏠 マイホーム購入"
-          />
-
-        </div>
-
-        <div className="mt-10">
-          <PrimaryButton
-            text="シミュレーションを始める"
-          />
-        </div>
-
-      </main>
-    </>
+      <p className="mt-6">
+        {error ? "Supabase接続成功！（テーブルはまだありません）" : "Supabase接続成功！"}
+      </p>
+    </main>
   );
 }
